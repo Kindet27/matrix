@@ -6,7 +6,7 @@
 
     <groupId>com.github.kindet27</groupId>
     <artifactId>matrix</artifactId>
-    <version>1.0-SHAPSHOT</version>
+    <version>-SHAPSHOT</version>
 
     <build>
         <plugins>
