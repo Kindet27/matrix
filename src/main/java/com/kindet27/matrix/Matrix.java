@@ -1,3 +1,5 @@
+package com.kindet27.matrix;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
