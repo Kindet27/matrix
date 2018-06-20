@@ -34,6 +34,10 @@ public class Matrix<E extends Number> {
         return (E) arr[row][column];
     }
 
+    public int getRows(){
+        return rows;
+    }
+
     public void  setElement(E element, int columns, int rows){
         this.arr[columns][rows] = element;
     }
