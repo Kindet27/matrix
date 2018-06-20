@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kindet27</groupId>
-    <artifactId>matrix-SHAPSHOT</artifactId>
-    <version>1.0</version>
+    <artifactId>matrix</artifactId>
+    <version>master-SHAPSHOT</version>
 
     <build>
         <plugins>
