@@ -50,4 +50,10 @@ public class Matrix<E extends Number> {
     public void matrixRowsSort(Comparator<Number[]> comparator){
         Arrays.sort(arr, comparator);
     }
+
+    public void swapTwoRows(int row1, int row2){
+        Number[] temp = arr[row1];
+        arr[row1] = arr[row2];
+        arr[row2] = temp;
+    }
 }
