@@ -6,7 +6,7 @@
 
     <groupId>com.kindet27</groupId>
     <artifactId>matrix</artifactId>
-    <version>-SHAPSHOT</version>
+    <version>master-SHAPSHOT</version>
 
     <build>
         <plugins>
