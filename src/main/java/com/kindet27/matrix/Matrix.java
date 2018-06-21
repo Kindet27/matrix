@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.Scanner;
 import java.util.function.Function;
 
+import static java.lang.Math.pow;
+
 public class Matrix<E extends Number> {
     private final int rows;
     private final int columns;
@@ -16,7 +18,7 @@ public class Matrix<E extends Number> {
         this.arr = new Number[rows][columns];
     }
 
-    private Matrix(int size) {
+    public Matrix(int size) {
         this(size, size);
     }
 
@@ -49,6 +51,33 @@ public class Matrix<E extends Number> {
                 System.out.print(arr[i][j]+ " ");
             }
         }
+    }
+
+    private Number[][] getMatrixMinor(Number[][] inArr, int column ){
+        Number[][] minor = new Number[inArr.length-1][inArr.length-1];
+        for (int i = 0; i < minor.length; i++) {
+            for (int j = 0; j < minor.length; j++) {
+                minor[i][j] = (column <= j )? inArr[i + 1][j + 1] : inArr[i+1][j];
+            }
+        }
+        return minor;
+    }
+
+    public int calculateDeterminant(){
+        return calcDeterminant(this.arr);
+    }
+
+    private int calcDeterminant(Number[][] inArr){
+        int determinant = 0;
+        if(inArr.length == 1){
+            return (int) inArr[0][0];
+        }
+        else{
+            for (int i = 0; i < inArr.length; i++) {
+                determinant +=  pow(-1, i) * (int) inArr[0][i] * calcDeterminant(getMatrixMinor(inArr, i));
+            }
+        }
+        return determinant;
     }
 
     public void matrixRowsSort(Comparator<Number[]> comparator){
