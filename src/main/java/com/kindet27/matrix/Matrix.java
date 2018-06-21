@@ -32,7 +32,7 @@ public class Matrix<E extends Number> {
         }
     }
 
-    public Matrix(Number[][] arr){
+    public Matrix(E[][] arr){
         this.arr = arr;
         this.rows = arr.length;
         this.columns = arr[0].length;
