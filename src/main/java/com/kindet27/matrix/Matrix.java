@@ -69,6 +69,7 @@ public class Matrix<E extends Number> {
             for (int j = 0; j < columns; j++) {
                 System.out.print(arr[i][j] + " ");
             }
+            System.out.println();
         }
     }
 
