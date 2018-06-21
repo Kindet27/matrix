@@ -64,16 +64,21 @@ public class Matrix<E extends Number> {
     }
 
     public void matrixSout() {
-        System.out.println(rows);
-        if (rows != columns) {
-            System.out.println(columns);
-        }
+         /*if (rows != columns) {
+            System.out.println(rows);
+        }*/
+        System.out.println(columns);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
+    }
+
+    public void matrixSout2Dim() {
+        System.out.println(rows);
+        matrixSout();
     }
 
     private Number[][] getMatrixMinor(Number[][] inArr, int column) {
