@@ -44,16 +44,16 @@ public class Matrix<E extends Number> {
         return columns;
     }
 
-    public E[] getRowByInd(int ind) {
-        return (E[]) arr[ind];
+    public Number[] getRowByInd(int ind) {
+        return  arr[ind];
     }
 
-    public E[] getColumnByInd(int ind) {
+    public Number[] getColumnByInd(int ind) {
         Number[] column = new Number[rows];
         for (int i = 0; i < rows; i++) {
             column[i] = arr[i][ind];
         }
-        return (E[]) column;
+        return  column;
     }
 
     public void setElement(E element, int columns, int rows) {
@@ -141,5 +141,10 @@ public class Matrix<E extends Number> {
             }
         }
         return editedMatrix;
+    }
+
+    public static void main(String[] args) {
+        Matrix<Integer> m = new Matrix<>(new Scanner(System.in), Scanner::nextInt);
+        Integer[] wd = m.getRowByInd(0);
     }
 }
