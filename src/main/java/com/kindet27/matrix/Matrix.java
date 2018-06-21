@@ -45,7 +45,7 @@ public class Matrix<E extends Number> {
     }
 
     public Number[] getRowByInd(int ind) {
-        return  arr[ind];
+        return arr[ind];
     }
 
     public Number[] getColumnByInd(int ind) {
@@ -53,7 +53,15 @@ public class Matrix<E extends Number> {
         for (int i = 0; i < rows; i++) {
             column[i] = arr[i][ind];
         }
-        return  column;
+        return column;
+    }
+
+    public Integer[] convertToIntArr(Number[] numArr) {
+        Integer[] inArr = new Integer[numArr.length];
+        for (int i = 0; i < inArr.length; i++) {
+            inArr[i] = (Integer) numArr[i];
+        }
+        return inArr;
     }
 
     public void setElement(E element, int columns, int rows) {
@@ -141,10 +149,5 @@ public class Matrix<E extends Number> {
             }
         }
         return editedMatrix;
-    }
-
-    public static void main(String[] args) {
-        Matrix<Integer> m = new Matrix<>(new Scanner(System.in), Scanner::nextInt);
-        Integer[] wd = m.getRowByInd(0);
     }
 }
