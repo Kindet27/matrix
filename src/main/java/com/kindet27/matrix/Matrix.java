@@ -32,6 +32,12 @@ public class Matrix<E extends Number> {
         }
     }
 
+    public Matrix(Number[][] arr){
+        this.arr = arr;
+        this.rows = arr.length;
+        this.columns = arr[0].length;
+    }
+
     @SuppressWarnings("unchecked")
     public E getElement(int row, int column) {
         return (E) arr[row][column];
