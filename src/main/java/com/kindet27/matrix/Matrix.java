@@ -1,5 +1,6 @@
 package com.kindet27.matrix;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -44,24 +45,18 @@ public class Matrix<E extends Number> {
         return columns;
     }
 
-    public Number[] getRowByInd(int ind) {
-        return arr[ind];
+    public E[] getRowByInd(int ind) {
+        E[] outRow = (E[]) Array.newInstance(arr[ind][0].getClass(), columns);
+        System.arraycopy(arr[ind],0,outRow,0, columns);
+        return outRow;
     }
 
-    public Number[] getColumnByInd(int ind) {
-        Number[] column = new Number[rows];
+    public E[] getColumnByInd(int ind) {
+        E[] outColumn = (E[]) Array.newInstance(arr[0][ind].getClass(), rows);
         for (int i = 0; i < rows; i++) {
-            column[i] = arr[i][ind];
+            outColumn[i] = (E) arr[i][ind];
         }
-        return column;
-    }
-
-    public Integer[] convertToIntArr(Number[] numArr) {
-        Integer[] inArr = new Integer[numArr.length];
-        for (int i = 0; i < inArr.length; i++) {
-            inArr[i] = (Integer) numArr[i];
-        }
-        return inArr;
+        return outColumn;
     }
 
     public void setElement(E element, int columns, int rows) {
